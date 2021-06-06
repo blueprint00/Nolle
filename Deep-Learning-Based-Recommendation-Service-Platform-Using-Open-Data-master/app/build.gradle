@@ -1,0 +1,117 @@
+apply plugin: 'com.android.application'
+android.defaultConfig.vectorDrawables.useSupportLibrary = true
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.3"
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    defaultConfig {
+        applicationId "com.example.adefault"
+        minSdkVersion 17
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+allprojects { //추가
+    repositories {
+        maven { url "https://jitpack.io" }
+        google()
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    implementation 'com.google.android.material:material:1.0.0'
+
+    //승연이
+
+    implementation 'com.google.android.gms:play-services-maps:17.0.0'
+    implementation 'com.google.android.gms:play-services-location:17.0.0'
+    implementation 'androidx.viewpager2:viewpager2:1.0.0'
+    implementation 'me.relex:circleindicator:2.1.4'
+    implementation 'com.google.code.gson:gson:2.8.5'
+    implementation 'com.airbnb.android:lottie:2.5.5'
+    implementation 'com.github.Mariovc:ImagePicker:1.2.2'
+    implementation 'com.github.IslamKhSh:CardSlider:1.0.1'
+
+
+    //Google Place
+    implementation 'com.google.android.libraries.places:places:2.2.0'
+
+    //refrofit 통신
+    implementation 'com.squareup.retrofit2:retrofit:2.8.1'
+    implementation 'com.squareup.retrofit2:converter-gson:2.8.1'
+
+
+    //image picker
+    implementation 'com.github.esafirm.android-image-picker:imagepicker:1.13.1'
+    // for experimental rx picker
+    implementation 'com.github.esafirm.android-image-picker:rximagepicker:1.13.1'
+
+    //cardView
+    implementation 'androidx.cardview:cardview:1.0.0'
+
+    //image Glide Library
+    // If you have a problem with Glide, please use the same Glide version or simply open an issue
+    implementation 'com.github.bumptech.glide:glide:4.8.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
+
+    //picasso
+    implementation 'com.squareup.picasso:picasso:2.5.2'
+
+    //autoImageSlider
+    implementation 'com.github.smarteist:autoimageslider:1.3.7-appcompat'
+
+    //AndroidTagView
+    implementation 'co.lujun:androidtagview:1.1.7'
+    implementation 'androidx.appcompat:appcompat:1.0.1'
+
+    //recyclerView
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+
+    //roundedImageView
+    implementation 'com.makeramen:roundedimageview:2.3.0'
+
+    //circleImageView
+    implementation 'de.hdodenhof:circleimageview:3.0.0'
+
+    //태그 라이브러리
+    implementation 'co.lujun:androidtagview:1.1.7'
+
+    //이미지 원형 변형 라이브러리
+    implementation 'de.hdodenhof:circleimageview:3.0.0'
+
+    //아연
+
+
+    implementation 'com.jaredrummler:twodscrollview:1.0.1'
+    implementation 'com.android.support:design:29.0.0'
+
+
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.0.0'
+
+
+}

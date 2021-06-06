@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:fillViewport="true"
+    android:id="@+id/sv_root">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingTop="10dp"
+    >
+
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:paddingBottom="10dp"
+        android:text="리뷰 쓰기"
+        android:textSize="22sp"
+        android:textColor="@color/colorBlack"
+        android:textStyle="bold" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginBottom="10dp"
+        android:background="#A5A2A2" />
+
+
+
+    <fragment android:id="@+id/autocomplete_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:name="com.google.android.libraries.places.widget.AutocompleteSupportFragment"
+        />
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:id="@+id/gallery"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:background="#E8E3E3"
+                android:foreground="@drawable/ic_add_black_24dp" />
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <EditText
+        android:layout_marginTop="10dp"
+        android:id="@+id/placeReviewText"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@drawable/review_border"
+        android:ems="10"
+        android:gravity="start|top"
+        android:hint="리뷰를 작성해주세요"
+        android:textColor="@color/colorBlack"
+        android:inputType="textMultiLine"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:maxLength="50" />
+
+    <TextView
+        android:id="@+id/placeReviewLimit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:textColor="@color/colorBlack"
+        android:layout_marginRight="10dp"
+        android:text="0 /50 글자 수" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:layout_marginBottom="10dp"
+        android:textColor="@color/colorBlack"
+        android:layout_marginLeft="10dp"
+        android:text="별점 주기" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:orientation="horizontal">
+
+        <RatingBar
+            android:id="@+id/reviewRatingBar"
+            style="@style/reviewRatingBar"
+            android:clickable="false"
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:numStars="5"
+            />
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/placeTagText"
+            style="@style/EditTextStyle"
+            android:layout_width="250dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:bufferType="spannable"
+            android:ems="10"
+            android:hint="태그를 추가해주세요"
+            android:maxLength="22"
+            android:textColor="#000000"
+            android:theme="@style/EditTextStyle" />
+
+        <Button
+            android:id="@+id/tagAddBtn"
+            android:layout_width="70dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/button_background"
+            android:text="추가"
+            android:textColor="@color/colorWhite"></Button>
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        >
+        <co.lujun.androidtagview.TagContainerLayout
+            android:id="@+id/reviewTagContainerLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="0dp"
+            app:container_enable_drag="true"
+            app:horizontal_interval="5dp"
+            app:vertical_interval="5dp"
+            app:tag_clickable="false"
+            app:tag_text_size="12sp"
+            app:tag_background_color="#CACACA"
+            app:tag_text_color="@android:color/black"
+            app:tag_border_color="@android:color/transparent"
+            app:tag_theme="none"
+            app:container_border_color="@android:color/transparent"
+            app:container_background_color="@android:color/transparent"
+            app:container_gravity="left"
+            />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="vertical"></LinearLayout>
+
+    <Button
+        android:id="@+id/boardBtn"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="#EB6D55"
+        android:text="게시"
+        android:textColor="@color/colorWhite"
+        android:textSize="18sp" />
+
+
+</LinearLayout>
+</ScrollView>

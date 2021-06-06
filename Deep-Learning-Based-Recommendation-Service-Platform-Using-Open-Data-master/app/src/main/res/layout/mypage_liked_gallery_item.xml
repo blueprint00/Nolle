@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:layout_editor_absoluteX="1dp"
+    tools:layout_editor_absoluteY="1dp">
+
+    <ImageView
+        android:id="@+id/myPageItemView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_weight="1"
+        android:scaleType="fitXY"
+        android:paddingLeft="5dp"
+        />
+
+    <RatingBar
+        android:id="@+id/myPage_liked_ratingstars"
+        style="@style/foodRatingBar"
+        android:layout_width="85dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_margin="3dp"
+        android:layout_weight="1"
+        android:clickable="false"
+        android:isIndicator="true"
+        android:paddingLeft="5dp"
+        android:max="5"
+        android:numStars="5"
+        android:stepSize="0.5" />
+
+    <TextView
+        android:id="@+id/myPage_liked_placeName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="5dp"
+        android:textColor="@color/colorBlack"
+        android:textStyle="bold"
+        android:layout_weight="1" />
+</LinearLayout>
